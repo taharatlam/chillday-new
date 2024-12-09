@@ -34,6 +34,9 @@ export default function Header() {
   const { width: windowWidth } = useWindowSize();
 
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+        return;
+    }
     gsap.registerPlugin(ScrollTrigger);
     const y = windowWidth * 1 * 0.1;
     const setY = gsap.quickSetter(target.current, "y", "px");
@@ -55,7 +58,7 @@ export default function Header() {
     timeline.current.fromTo(
       target.current,
       {
-        x: "45vw",
+        x: "40vw",
         y: "-40vh",
         scale: 0.7,
         rotate: 30, 
@@ -214,6 +217,9 @@ export default function Header() {
   }, [windowWidth]);
 
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+        return;
+    }
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
@@ -261,6 +267,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+ 
     const spans = document.querySelectorAll('.banner-text h1 span');
     
     gsap.to(spans, {
@@ -311,27 +318,48 @@ export default function Header() {
                 </div>
               </div>
               </div>
-              <div className="second-scroll">
-              <div className="row">
-                <div className="col-lg-6 col-12"></div>
-                <div className="col-lg-5 col-12">
-                  <div className="sec-scroll-con-container">
-                    <div className="sec-scroll-con" ref={sec2con}>
-                      <Image src={star} alt="el" />
-                    <h3 className="sec-head">
-                    Get spots just <br className="d-sm-block d-none" /> right for you
-                    </h3>
-                    <p className="para">
-                      Get recommendations, plan, and book the best places for you to eat, drink, chill, and have fun. You get great spots to enjoy, matched to your taste, preferences, and budget.
-                      </p>
+              <div className="second-scroll desk-el">
+                <div className="row">
+                  <div className="col-lg-6 col-12"></div>
+                  <div className="col-lg-5 col-12">
+                    <div className="sec-scroll-con-container">
+                      <div className="sec-scroll-con" ref={sec2con}>
+                        <Image src={star} alt="el" />
+                      <h3 className="sec-head">
+                      Get spots just <br className="d-sm-block d-none" /> right for you
+                      </h3>
+                      <p className="para">
+                        Get recommendations, plan, and book the best places for you to eat, drink, chill, and have fun. You get great spots to enjoy, matched to your taste, preferences, and budget.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              </div>
             </div>
           </header>
         
+            <div className="second-scroll mob-el">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-6 col-12"></div>
+                  <div className="col-lg-5 col-12">
+                    <div className="sec-scroll-con-container">
+                      <Image src={phone2} className="" alt="bg" />
+                      <div className="sec-scroll-con">
+                        <Image src={star} alt="el" />
+                      <h3 className="sec-head">
+                      Get spots just <br className="d-sm-block d-none" /> right for you
+                      </h3>
+                      <p className="para">
+                        Get recommendations, plan, and book the best places for you to eat, drink, chill, and have fun. You get great spots to enjoy, matched to your taste, preferences, and budget.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
       {/* <section className="hm-sec-3"></section>  */}

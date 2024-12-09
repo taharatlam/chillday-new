@@ -16,6 +16,9 @@ const Mob1 = () => {
   const el2Ref = useRef(null);
 
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+        return;
+    }
     gsap.registerPlugin(ScrollTrigger);
     const section = sectionRef.current;
     const mobCon = mobConRef.current;
@@ -36,10 +39,10 @@ const Mob1 = () => {
 
     timeline.fromTo(section, { opacity: 0 }, { opacity: 1, duration: 1 });
     timeline.fromTo(mobCon, { x: '-100%', opacity: 0 }, { x: '0%', opacity: 1, duration: 1 }, "-=0.5");
-    timeline.fromTo(mob1, { scale: 0.3, y: '100%' }, { scale: 1.1, y: '0%', duration: 1 }, "-=0.5");
+    timeline.fromTo(mob1, { scale: 0.3, y: '100%', transformOrigin: 'bottom' }, { scale: 1.1, y: '0%', transformOrigin: 'bottom', duration: 1 }, "-=0.5");
     // timeline.to(mob1,{ y: '0%', duration: 1 }, "-=0.5");
-    timeline.fromTo(el1, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
-    timeline.fromTo(el2, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
+    timeline.fromTo(el1, { opacity: 0, x: -50, scale: 1.2 }, { opacity: 1, x: 0, scale: 1, duration: 0.5 }, "-=0.3");
+    timeline.fromTo(el2, { opacity: 0, x: 50, scale: 1.2 }, { opacity: 1, x: 0, scale: 1, duration: 0.5 }, "-=0.3");
 
     return () => {
       timeline.kill();

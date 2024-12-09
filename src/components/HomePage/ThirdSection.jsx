@@ -37,6 +37,9 @@ const ThirdSection = () => {
     const mobWrapRefs = useRef([]);
     
     useEffect(() => {
+      if (window.innerWidth <= 768) {
+          return;
+      }
     gsap.registerPlugin(ScrollTrigger);
     const section = sectionRef.current;
     const secHead = secHeadRef.current;

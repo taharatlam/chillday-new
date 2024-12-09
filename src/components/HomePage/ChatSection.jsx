@@ -21,15 +21,19 @@ const ChatSection = () => {
   const ch4Ref = useRef(null)
 
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+        return;
+    }
     gsap.registerPlugin(ScrollTrigger)
 
+    
     const timeline = gsap.timeline({
       scrollTrigger: {
         id: 'chat-section',
         trigger: sectionRef.current,
         pin: true,
         start: "top top",
-        end: '+=300%',
+        end: '+=400%',
         // end: "bottom top",
         scrub: 2,
         pinSpacing: true,
@@ -41,9 +45,9 @@ const ChatSection = () => {
     gsap.set([ch1Ref.current, ch2Ref.current, ch3Ref.current, ch4Ref.current], { scale: 0 })
     gsap.set(contentRef.current, { x: -100, opacity: 0 })
     gsap.set(mobileRef.current, { x: 100, opacity: 0 })
-    gsap.set(containerRef.current, { x: -150 })
+    gsap.set(containerRef.current, { x: 0 })
     
-    timeline.to(containerRef.current, { scale: 1.3, duration: 2 })
+    timeline.to(containerRef.current, { scale: 1, duration: 2 })
 
     // Animate chat bubbles one by one
     timeline.to(ch1Ref.current, { scale: 1, duration: 2, delay: 5 })

@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 // import "./globals.css";
 import "../styles/main.scss";
+import "../styles/res.scss";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 

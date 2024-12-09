@@ -65,7 +65,7 @@ const Footer = () => {
                           Say goodbye to endless searching. Get straight to the places you&apos;ll love.
                       </p>
                   </div>
-                  <div className="col-lg-3 offset-lg-1 col-6">
+                  <div className="col-lg-3 offset-lg-1 col-12">
                       <h4 className='footer-title'>
                           Contacts
                       </h4>
@@ -75,7 +75,7 @@ const Footer = () => {
                           </li>
                       </ul>
                   </div>
-                  <div className="col-lg-4 col-6">
+                  <div className="col-lg-4 col-12">
                       <h4 className='footer-title'>
                       Join our Newsletter!
                       </h4>
