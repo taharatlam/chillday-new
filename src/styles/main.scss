@@ -126,8 +126,12 @@ h1,h2,h3,h4,h5,h6{
 
 
     h1{
-        font-size: 52px;
-        margin-top: -65px;
+        font-size: 50px;
+        
+        @media(min-width: 768px){
+            margin-top: -70px;
+            margin-left: 50px;
+        }
     }
 }
 .second-scroll{
