@@ -61,6 +61,7 @@ const ChatSection = () => {
     // Fade in content and mobile
     timeline.to(mobileRef.current, { x: 0, opacity: 1, duration: 2 }, "-=1.5")
     timeline.to(contentRef.current, { x: 0, opacity: 1, duration: 2 }, "-=1")
+    timeline.to(contentRef.current, { x: 0, opacity: 1, duration: 2 })
 
     return () => {
         // timeline?.current?.kill();

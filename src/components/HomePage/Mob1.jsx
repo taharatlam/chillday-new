@@ -30,7 +30,7 @@ const Mob1 = () => {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: '+=500%',
+        end: '+=200%',
         pin: true,
         pinSpacing: true,
         scrub: 2,
@@ -38,10 +38,11 @@ const Mob1 = () => {
     });
 
     timeline.fromTo(section, { opacity: 0 }, { opacity: 1, duration: 1 });
-    timeline.fromTo(mobCon, { x: '-100%', opacity: 0 }, { x: '0%', opacity: 1, duration: 1 }, "-=0.5");
+    timeline.fromTo(mobCon, { x: '-100%', opacity: 0 }, { x: '0%', opacity: 1, duration: 1 }, "-=1");
     timeline.fromTo(mob1, { scale: 0.3, y: '100%', transformOrigin: 'bottom' }, { scale: 1.1, y: '0%', transformOrigin: 'bottom', duration: 1 }, "-=0.5");
     // timeline.to(mob1,{ y: '0%', duration: 1 }, "-=0.5");
-    timeline.fromTo(el1, { opacity: 0, x: -50, scale: 1.2 }, { opacity: 1, x: 0, scale: 1, duration: 0.5 }, "-=0.3");
+    timeline.fromTo(el1, { opacity: 0, x: -50, scale: 1.2 }, { opacity: 1, x: 0, scale: 0.8, duration: 0.5 }, "-=0.3");
+   
     timeline.fromTo(el2, { opacity: 0, x: 50, scale: 1.2 }, { opacity: 1, x: 0, scale: 1, duration: 0.5 }, "-=0.3");
 
     return () => {

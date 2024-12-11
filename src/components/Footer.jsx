@@ -39,9 +39,9 @@ const Footer = () => {
           <div className="row">
             <div className="col-12 text-center">
               <h3 className='sec-head'>Say goodbye to endless searching</h3>
-              <p className='para'>
+              {/* <p className='para'>
                 Download <span>ChillDays</span>
-              </p>
+              </p> */}
               <div className="sec-btns">
                 <Link href="/" className='btn'>
                   <Image src={playStore} alt="play store" />
