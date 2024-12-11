@@ -33,7 +33,7 @@ const ChatSection = () => {
         trigger: sectionRef.current,
         pin: true,
         start: "top top",
-        end: '+=400%',
+        end: '+=500%',
         // end: "bottom top",
         scrub: 2,
         pinSpacing: true,

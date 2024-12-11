@@ -30,7 +30,7 @@ const Mob1 = () => {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: '+=300%',
+        end: '+=500%',
         pin: true,
         pinSpacing: true,
         scrub: 2,
