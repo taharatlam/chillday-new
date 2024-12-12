@@ -20,14 +20,30 @@ const Footer = () => {
 
   const handleSubscribe = async (values, { setSubmitting, resetForm }) => {
     try {
-      // Here you would typically make an API call to your backend
-      // For demo, simulating API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubscribeStatus('Thanks for subscribing!');
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: values.email,
+          subject: 'Newsletter Subscription',
+          text: 'Thank you for subscribing to our newsletter!',
+          html: '<p>Thank you for subscribing to our newsletter!</p>',
+        }),
+      });
+
+      const data = await response.json();
+      setSubscribeStatus(data.message);
+      setTimeout(() => {
+        setSubscribeStatus('');
+      }, 3000);
       resetForm();
     } catch (error) {
       setSubscribeStatus('Something went wrong. Please try again.');
+      setTimeout(() => {
+        setSubscribeStatus('');
+      }, 3000);
     }
     setSubmitting(false);
   };
@@ -39,9 +55,6 @@ const Footer = () => {
           <div className="row">
             <div className="col-12 text-center">
               <h3 className='sec-head'>Say goodbye to endless searching</h3>
-              {/* <p className='para'>
-                Download <span>ChillDays</span>
-              </p> */}
               <div className="sec-btns">
                 <Link href="/" className='btn'>
                   <Image src={playStore} alt="play store" />
@@ -88,16 +101,18 @@ const Footer = () => {
                         onSubmit={handleSubscribe}
                       >
                         {({ errors, touched, isSubmitting }) => (
-                          <Form className="sub-form">
-                            <Field
-                              type="email"
-                              name="email"
-                              placeholder='Enter your email address'
-                              className={errors.email && touched.email ? 'error' : ''}
-                            />
-                            <button type="submit" disabled={isSubmitting}>
-                              {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
-                            </button>
+                          <Form >
+                            <div className="sub-form">
+                              <Field
+                                type="email"
+                                name="email"
+                                placeholder='Enter your email address'
+                                className={errors.email && touched.email ? 'error' : ''}
+                              />
+                              <button type="submit" disabled={isSubmitting}>
+                                {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
+                              </button>
+                            </div>
                             {errors.email && touched.email && (
                               <div className="error-message">{errors.email}</div>
                             )}
