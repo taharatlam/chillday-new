@@ -28,7 +28,7 @@ const DiscoverSection = () => {
         id: 'discover-section',
         trigger: sectionRef.current,
         start: 'top top',
-        end: '+=400%',
+        end: '+=300%',
         pin: true,
         pinSpacing: true,
         scrub: 2,
