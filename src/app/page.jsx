@@ -17,7 +17,7 @@ const page = () => {
       <Header />
       {/* <TestComponent /> */}
       {/* <Scroll2 /> */}
-      {/* <div className="spacer"></div> */}
+      <div className="spacer"></div>
       <DiscoverSection />
       <ChatSection />
       <ThirdSection />
