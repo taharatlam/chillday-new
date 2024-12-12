@@ -200,4 +200,28 @@
             margin: 0 auto;
         }
     }
+    .d-grid{
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 2em;
+
+        .d-card{
+            flex-direction: column;
+            padding: 0 !important;
+
+            img{
+                max-width: 250px;
+            }
+
+            h3{
+                font-size: 20px;
+            }
+        }
+    }
+    .discover-sec-wrapper > img{
+        display: none;
+    }
+    .discover-section{
+        height: auto;
+    }
 }
