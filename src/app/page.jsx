@@ -8,6 +8,8 @@ import Navbar from '@/components/HomePage/Navbar'
 import TestComponent from '@/components/HomePage/TestComponent'
 import Mob1 from '@/components/HomePage/Mob1'
 import Mob2 from '@/components/HomePage/Mob2'
+import DiscoverSection from '@/components/HomePage/DiscoverSection'
+
 const page = () => {
   return (
     <div>
@@ -15,7 +17,8 @@ const page = () => {
       <Header />
       {/* <TestComponent /> */}
       {/* <Scroll2 /> */}
-      <div className="spacer"></div>
+      {/* <div className="spacer"></div> */}
+      <DiscoverSection />
       <ChatSection />
       <ThirdSection />
       <Mob1 />

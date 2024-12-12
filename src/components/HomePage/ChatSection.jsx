@@ -21,9 +21,11 @@ const ChatSection = () => {
   const ch4Ref = useRef(null)
 
   useEffect(() => {
+
     if (window.innerWidth <= 768) {
         return;
     }
+    
     gsap.registerPlugin(ScrollTrigger)
 
     
