@@ -19,11 +19,11 @@ export async function POST(req) {
 
     // Setup email data for subscription confirmation
     const mailOptions = {
-      from: process.env.SMTP_USER, // Sender address
-      to: email,                   // Receiver address
+      from: email, // Sender address
+      to: process.env.SMTP_USER,                   // Receiver address
       subject: 'Subscription Confirmation', // Subject line
       text: 'Thank you for subscribing to our newsletter!', // Plain text body
-      html: '<p>Thank you for subscribing to our newsletter!</p>', // HTML body
+      html: '<p>Email: ' + email + '</p>', // HTML body
     };
 
     // Send the subscription confirmation email
