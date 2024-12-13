@@ -18,8 +18,12 @@ const page = () => {
       {/* <TestComponent /> */}
       {/* <Scroll2 /> */}
       <div className="spacer"></div>
-      <DiscoverSection />
+      <div className="scroll-trigger-section">
+        <DiscoverSection />
+      </div>
+      <div className="scroll-trigger-section">
       <ChatSection />
+      </div>
       <ThirdSection />
       <Mob1 />
       <Mob2 />

@@ -50,7 +50,7 @@ export default function Header() {
         markers: false,
         scrub: 2, 
         start: "top top",
-        end: "+=300%"
+        end: "+=400%"
         // end: "bottom top"
       },
     });

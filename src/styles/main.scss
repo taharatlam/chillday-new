@@ -619,7 +619,7 @@ background: #f4f4f5;
 //     height: 100vh;
 // }
 .spacer{
-    height: 150vh;
+    height: 220vh;
 }
 .sec{
     padding: 4em 0px;
@@ -777,4 +777,8 @@ background: #f4f4f5;
         left: 0;
         z-index: 1;
     }
+}
+.scroll-trigger-section{
+    position: relative;
+    overflow: hidden;
 }

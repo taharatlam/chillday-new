@@ -52,7 +52,7 @@ const ChatSection = () => {
     timeline.to(containerRef.current, { scale: 1, duration: 2 })
 
     // Animate chat bubbles one by one
-    timeline.to(ch1Ref.current, { scale: 1, duration: 2, delay: 5 })
+    timeline.to(ch1Ref.current, { scale: 1, duration: 2 }, "-=2")
     timeline.to(ch2Ref.current, { scale: 1, duration: 2 })
     timeline.to(ch3Ref.current, { scale: 1, duration: 2 })
     timeline.to(ch4Ref.current, { scale: 1, duration: 2 })
